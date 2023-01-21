@@ -1,0 +1,26 @@
+@using BOL;
+@model Department;
+@{
+    ViewData["Title"] = "Insert   Page";
+}
+
+<div class="text-center">
+    <h1>Insert  Page....</h1>
+    @* <form action="/department/insert" method="post">
+       Departmetn Id: <input type="number" name="Id" id="id" asp-for="Id"><br>
+       Departmetn Name: <input type="text" name="Name" id="nam" asp-for="Name"><br>
+       Departmetn Location: <input type="text" name="Location" id="loc" asp-for="Location"><br>
+       <button type="submit" name="btn" id="btn">Add Product</button>
+
+    </form> *@
+
+    <form action="/department/insert" method="post">
+       Departmetn Id: <input type="number" name="Id" id="id" asp-for="Id"><br>
+       Departmetn Name: <input type="text" name="Name" id="nam" asp-for="Name"><br>
+       Departmetn Location: <input type="text" name="Location" id="loc" asp-for="Location"><br>
+       <button type="submit" name="btn" id="btn">Add Product</button>
+
+    </form>
+    
+    
+</div>

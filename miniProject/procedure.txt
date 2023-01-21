@@ -1,0 +1,58 @@
+##  to create a new solution file
+ dotnet new sln
+
+
+##   to create a new ASP.NET Core MVC web application
+dotnet new mvc -o OnlyDepartment
+
+cd .\OnlyDepartment\
+
+dotnet watch
+
+
+
+## creating folder/directory  to make layerd architecture...
+
+dotnet new classlib -o BOL
+dotnet new classlib -o DAL
+dotnet new classlib -o BLL
+
+
+
+##  connection bol,dal, BLL to sln
+
+dotnet sln add .\BLL\BLL.csproj
+dotnet sln add .\BOL\BOL.csproj
+dotnet sln add .\DAL\DAL.csproj
+
+
+##  BOL
+--make class department
+(+)Department.cs 
+
+
+## DAL
+-- make connection with mysql using Department class in BOL in (+)Connected
+
+dotnet add reference ..\BOL\BOL.csproj 
+
+--Adding nugget of mysql (the command is case sensitive so write exactly)
+dotnet add package MySql.Data
+
+added GetAllDepartments() method
+
+
+## BLL
+-- add reference
+dotnet add reference ..\BOL\BOL.csproj
+dotnet add reference ..\DAL\DAL.csproj
+
+--making method 
+
+## DepartmentController , in index method calling catalogManager 
+## creating  view of index in department .
+
+!!Error --=> not connect link with program.cs with BOL,BLL,DAL;
+
+
+
